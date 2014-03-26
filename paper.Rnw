@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage[letterpaper]{geometry}
+\usepackage{Sweave}
+\usepackage{animate}
+\usepackage{graphicx}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\animategraphics[controls, loop,label=plot]{10}{plot-}{1}{100}
+
+\end{document}
+
+%%This builds an animated figure from files named
+%%plot-001,plot-002....plot-005 with controls below
+%%and a frames rate of 3
