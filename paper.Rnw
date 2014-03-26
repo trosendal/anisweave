@@ -7,6 +7,32 @@
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
+This is an example of using the animate latex package to generate
+an animated figure in a PDF. The present method employs a strategy
+'that builds the frames of the animation first in an r script and
+then runs sweave/Latex to make the animation. The alternate strategy
+isto generate the frames in the Sweave file. This is a strateg that
+is described in R's animation package. It is suitable if your frames
+are fast to build. If you have frames that take a long time to
+generate then the present strategy allows you to build them first
+and then run sweave later. This order is controlled in a makefile
+that first builds the frames then the tex file then the pdf if the
+frames are there it will
+no rebuild them.
+
+In this code:
+\begin{verbatim}
+\animategraphics[controls, loop,label=plot1]{10}{plot-}{1}{100}
+
+'controls' tells latex that you want buttons below the animation
+'loop' that you want it to repeat
+'label' is you latex reference to this figure
+{10} is the framerate
+{plot-} is the common prefic of the files in the animation
+{1}{100} are the running numbers of the file names
+\end{verbatim}
+
+
 \animategraphics[controls, loop,label=plot]{10}{plot-}{1}{100}
 
 \end{document}

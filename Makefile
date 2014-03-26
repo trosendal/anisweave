@@ -3,8 +3,8 @@ all:paper.pdf
 plot100.png: plot.r
 	Rscript plot.r
 
-paper.tex: plot100.png paper2.Rnw
-	Rscript -e "Sweave('paper2.Rnw')"
+paper.tex: plot100.png paper.Rnw
+	Rscript -e "Sweave('paper.Rnw')"
 
 paper.pdf: paper.tex
 	Rscript -e "tools::texi2pdf('paper.tex')"
