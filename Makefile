@@ -8,7 +8,7 @@ paper.tex: plot100.png paper.Rnw
 
 paper.pdf: paper.tex
 	Rscript -e "tools::texi2pdf('paper.tex')"
-
+	make sweep
 sweep:
 	rm -f *.png
 	rm -f *.tex

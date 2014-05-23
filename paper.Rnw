@@ -29,7 +29,8 @@ In this code:
 'label' is you latex reference to this figure
 {10} is the framerate
 {plot-} is the common prefic of the files in the animation
-{1}{100} are the running numbers of the file names
+{1}{100} are the running numbers of the file names, they are in numerical
+order, not alphabetical as is the case when you make a .gif with imagemagik
 \end{verbatim}
 
 
