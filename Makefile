@@ -3,15 +3,11 @@ all:paper.pdf
 plot100.png: plot.r
 	Rscript plot.r
 
-paper.tex: plot100.png paper.Rnw
-	Rscript -e "Sweave('paper.Rnw')"
-
-paper.pdf: paper.tex
-	Rscript -e "tools::texi2pdf('paper.tex')"
+paper.pdf: plot100.png
+	texify --pdf --max-iterations=50 paper.tex
 	make sweep
 sweep:
 	rm -f *.png
-	rm -f *.tex
 	rm -f *.aux
 	rm -f *.bbl
 	rm -f *.log

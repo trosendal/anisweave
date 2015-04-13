@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 *.Rproj
-*.tex
 *.aux
 *.log
 *.pdf
